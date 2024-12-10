@@ -17,16 +17,17 @@
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && npm run save-json-api && shx cp build/index.html build/404.html",
-    "save-json-api": "node ./src/server/scripts/save-json-api.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "shx rm -rf build && npm run build",
-    "deploy": "gh-pages -d build -b master",
-    "server": "json-server --watch src/server/db/data.json --port 3001"
-  },
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build && npm run save-json-api && shx cp build/index.html build/404.html",
+  "save-json-api": "node ./src/server/scripts/save-json-api.js",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "predeploy": "shx rm -rf build && npm run build",
+  "deploy": "git checkout gh-pages || git checkout -b gh-pages && gh-pages -d build && git push origin gh-pages --force",
+  "server": "json-server --watch src/server/db/data.json --port 3001"
+},
+
   "eslintConfig": {
     "extends": [
       "react-app",
