@@ -1,1 +1,5 @@
-{"greeting":"Hello world"}
+{
+  "data": {
+    "greeting": "Hello world!"
+  }
+}
